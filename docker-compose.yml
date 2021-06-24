@@ -24,7 +24,7 @@ services:
     networks:
       - cicd_net
     volumes:
-      - ./gitea:/data
+      - /share/configs/gitea_app:/data
 
   drone:
     container_name: drone
@@ -52,7 +52,7 @@ services:
       - cicd_net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./drone:/data
+      - /share/configs/drone_app:/data
 
   drone-runner:
     container_name: drone-runner
